@@ -13,7 +13,7 @@
     "rollback:prod": "heroku run knex migrate:rollback -a bw-u4-project",
     "database:prod": "heroku pg:psql -a bw-u4-project",
     "seed:prod": "heroku run knex seed:run -a bw-u4-project",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
     "deploy": "git push heroku main"
   },
   "engines": {
@@ -23,6 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",

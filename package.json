@@ -6,10 +6,15 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "migrate": "knex migrate:latest",
-    "rollback": "knex migrate:rollback",
-    "seed": "knex seed:run",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "migrate:dev": "knex migrate:latest",
+    "rollback:dev": "knex migrate:rollback",
+    "seed:dev": "knex seed:run",
+    "migrate:prod": "heroku run knex migrate:latest -a bw-u4-project",
+    "rollback:prod": "heroku run knex migrate:rollback -a bw-u4-project",
+    "database:prod": "heroku pg:psql -a bw-u4-project",
+    "seed:prod": "heroku run knex seed:run -a bw-u4-project",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git push heroku main"
   },
   "engines": {
     "node": "16.13.1",

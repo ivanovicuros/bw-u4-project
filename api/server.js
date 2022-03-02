@@ -1,6 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
+const RecipesRouter = require('./recipes/recipes-router')
 
 
 const server = express()
@@ -8,9 +9,9 @@ server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
-server.get('/api/hello', (req, res) => {
-    res.json({message: 'working'})
-})
+
+server.use('/api/recipes', RecipesRouter)
+
 
 server.use('*', (req, res) => {
     res.send('<h1>hello</h1>')

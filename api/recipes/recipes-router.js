@@ -11,7 +11,12 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-    next()
+    const { id } = req.params
+    Recipes.findById(id)
+    .then(recipe => {
+        res.status(200).json(recipe)
+    })
+    .catch(next) 
 })
 
 router.post('/', (req, res, next) => {

@@ -5,15 +5,6 @@ function findAll() {
     .select('recipe_id', 'title', 'r.source', 'category')
 }
 
-// select r.recipe_id, r.title, r.source,
-// i.instruction_text, i.step_number,
-// ingredients.ingredient_name
-// from recipes as r
-// left join instructions as i on r.recipe_id = i.recipe_id
-// left join ing_instructions as ing on ing.instruction_id = i.instruction_id
-// left join ingredients on ing.ingredient_id = ingredients.ingredient_id
-// order by i.step_number
-
  async function findById(id){    
     const rows = await db('recipes as r')
     .leftJoin('instructions as i', 'r.recipe_id', 'i.recipe_id')
@@ -49,8 +40,6 @@ function findAll() {
      })
      return result
 }
-
-
 
 
 module.exports = { findAll, findById }

@@ -12,13 +12,6 @@ exports.up = async (knex) => {
         tbl.string('title', 200).notNullable()
         tbl.string('source', 200)
         tbl.string('category').notNullable()
-        tbl.integer('user_id')
-        .unsigned()
-        .notNullable()
-        .references('user_id')
-        .inTable('users')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE')
       })
       .createTable('ingredients', tbl => {
         tbl.increments('ingredient_id')

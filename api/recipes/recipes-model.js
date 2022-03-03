@@ -41,5 +41,10 @@ function findAll() {
      return result
 }
 
+  function add(recipe){
+   return  db('recipes').insert(recipe, ['title', 'source', 'category'])
 
-module.exports = { findAll, findById }
+}
+
+
+module.exports = { findAll, findById, add }

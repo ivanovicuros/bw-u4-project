@@ -7,7 +7,6 @@ const recipes = [
     title: 'carbonara',
     source: " Luigi's granma' ",
     category: 'appetizer',
-    user_id: 1,
   }
 ]
 

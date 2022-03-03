@@ -20,7 +20,11 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    next()
+    Recipes.add(req.body)
+    .then(newRecipe => {
+        res.status(201).json(newRecipe)
+    })
+    .catch(next)
 })
 
 router.put('/:id', (req, res, next) => {

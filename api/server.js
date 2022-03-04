@@ -3,6 +3,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 const RecipesRouter = require('./recipes/recipes-router')
 const AuthRouter = require('./auth/auth-router')
+const { restricted } = require('../api/auth/auth-middleware')
 
 
 const server = express()
@@ -11,7 +12,7 @@ server.use(helmet())
 server.use(cors())
 
 server.use('/api/auth', AuthRouter)
-server.use('/api/recipes', RecipesRouter)
+server.use('/api/recipes', restricted, RecipesRouter)
 
 
 server.use('*', (req, res) => {

@@ -33,7 +33,7 @@ router.post('/login', (req, res, next) => {
     .catch(next)
 })
 
-router.get('/users', (req, res, next) => { // created for peace of mind
+router.get('/users',  (req, res, next) => { // created for peace of mind
     Users.findAll()
     .then(result => {
         res.status(200).json(result)
@@ -49,7 +49,5 @@ function tokenCreate(user){
     const token = jwt.sign(payload, secret, {expiresIn: '1h'})
     return token
 }
-
-
 
 module.exports = router

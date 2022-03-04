@@ -4,9 +4,9 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const secret = process.env.JWT_SECRET
 const rounds = process.env.BCRYPT_ROUNDS
+const { checkLogin, checkUsernameExist } = require('./auth-middleware')
 
-
-router.post('/register', (req, res, next) => {
+router.post('/register', checkUsernameExist, (req, res, next) => {
    let user = req.body
    const hash = bcrypt.hashSync(user.password, parseInt(rounds))
    user.password = hash
@@ -17,7 +17,7 @@ router.post('/register', (req, res, next) => {
    .catch(next)
 })
 
-router.post('/login', (req, res, next) => {
+router.post('/login', checkLogin, (req, res, next) => {
     let { username, password } = req.body
     Users.findBy({ username })
     .then(([user]) => {

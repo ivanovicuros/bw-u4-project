@@ -41,10 +41,14 @@ function findAll() {
      return result
 }
 
-  function add(recipe){
-   return  db('recipes').insert(recipe, ['title', 'source', 'category'])
-
+   function add(recipe){
+    return db('recipes').insert(recipe, ['title', 'source', 'category'])
 }
 
+    function remove(id){
+        return db('recipes').where('recipe_id', id).delete()
+    }
 
-module.exports = { findAll, findById, add }
+
+
+module.exports = { findAll, findById, add, remove }

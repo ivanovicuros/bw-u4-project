@@ -32,7 +32,11 @@ router.put('/:id', (req, res, next) => {
 })
 
 router.delete('/:id', (req, res, next) => {
-    next()
+    Recipes.remove(req.params.id)
+    .then(removed => {
+        res.status(200).json(removed)
+    })
+    .catch(next)
 })
 
 module.exports = router

@@ -1,5 +1,8 @@
 const users =[
-  {username: 'Bobisha', password:'1234'}
+  {username: 'Bobisha', password:'1234'},
+  {username: 'Mark', password:'1234'},
+  {username: 'Guizeppe', password:'1234'},
+  {username: 'Giocatorre', password:'1234'}
 ]
 
 const recipes = [

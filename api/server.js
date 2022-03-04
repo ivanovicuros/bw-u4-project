@@ -2,6 +2,7 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const RecipesRouter = require('./recipes/recipes-router')
+const AuthRouter = require('./auth/auth-router')
 
 
 const server = express()
@@ -9,7 +10,7 @@ server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
-
+server.use('/api/auth', AuthRouter)
 server.use('/api/recipes', RecipesRouter)
 
 

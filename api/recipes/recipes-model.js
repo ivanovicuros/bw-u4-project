@@ -41,13 +41,13 @@ function findAll() {
      return result
 }
 
-   function add(recipe){
+function add(recipe){
     return db('recipes').insert(recipe, ['title', 'source', 'category'])
 }
 
-    function remove(id){
+function remove(id){
         return db('recipes').where('recipe_id', id).delete()
-    }
+}
 
 
 

@@ -4,7 +4,7 @@ Secret Family Recipes CookBook is a platform where you can store all you recipes
 
 ## Requirements
 
-    For development you will need to:
+For development you will need to:
 
 ### Install
 
@@ -15,7 +15,7 @@ Secret Family Recipes CookBook is a platform where you can store all you recipes
 ### Start
 
     $ npm start
-    
+
 Runs the app in the development mode.
 
 ### Built with

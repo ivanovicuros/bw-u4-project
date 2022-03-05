@@ -4,17 +4,18 @@ Secret Family Recipes CookBook is a platform where you can store all you recipes
 
 ## Requirements
 
-For development you will need to:
+    For development you will need to:
 
 ### Install
 
-$ git clone https://github.com/urosivanovich/bw-u4-project
-$ cd bw-u4-project
-$ npm install
+    $ git clone https://github.com/urosivanovich/bw-u4-project
+    $ cd bw-u4-project
+    $ npm install
 
 ### Start
 
-$ npm start
+    $ npm start
+    
 Runs the app in the development mode.
 
 ### Built with

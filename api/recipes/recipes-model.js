@@ -45,10 +45,14 @@ function add(recipe){
     return db('recipes').insert(recipe, ['title', 'source', 'category'])
 }
 
-function remove(id){
-        return db('recipes').where('recipe_id', id).delete()
+async function update(id, recipe){
+    await db('recipes').update(recipe).where('recipe_id', id)
+    const updated = findById(id)
+    return updated
 }
 
+function remove(id){
+    return db('recipes').where('recipe_id', id).delete()
+}
 
-
-module.exports = { findAll, findById, add, remove }
+module.exports = { findAll, findById, add, remove, update }

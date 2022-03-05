@@ -28,7 +28,11 @@ router.post('/', (req, res, next) => {
 })
 
 router.put('/:id', (req, res, next) => {
-    next()
+    Recipes.update(req.params.id, req.body)
+    .then(recipe => {
+        res.status(200).json(recipe)
+    })
+    .catch(next)
 })
 
 router.delete('/:id', (req, res, next) => {

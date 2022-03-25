@@ -29,8 +29,8 @@ server.get('/weather', (req, res) => { // temporary endpoint for the purpose of 
     }).catch(err => {
         console.log(err)
     })
-    
 })
+
 
 
 server.use('*', (req, res) => {

@@ -21,10 +21,11 @@ server.get('/weather', (req, res) => { // temporary endpoint for the purpose of 
     const options = {
         method: 'GET',
         url: 'https://api.openweathermap.org/data/2.5/weather',
-        params: {q: location, appid: API_KEY} 
+        params: {q: location, appid: API_KEY, units:'imperial'} 
     }
     axios.request(options)
     .then(resp => {
+        console.log(resp.data)
       res.json(resp.data)
     }).catch(err => {
         console.log(err)

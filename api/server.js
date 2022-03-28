@@ -25,7 +25,7 @@ server.get('/weather', (req, res) => { // temporary endpoint for the purpose of 
     }
     axios.request(options)
     .then(resp => {
-        console.log(resp.data)
+        res.header("Access-Control-Allow-Origin", "*")
       res.json(resp.data)
     }).catch(err => {
         console.log(err)

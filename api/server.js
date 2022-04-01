@@ -16,11 +16,6 @@ const API_KEY = process.env.API_KEY
 server.use('/api/auth', AuthRouter)
 server.use('/api/recipes', restricted, RecipesRouter)
 
-server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
-
 server.get('/weather', (req, res) => { // temporary endpoint for the purpose of small weather app
     const location = req.query.q   
     const options = {
